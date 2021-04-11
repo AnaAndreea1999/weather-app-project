@@ -1,0 +1,39 @@
+body{color: #630436;
+   font-family: 'Julius Sans One', sans-serif; 
+ 
+}
+.weather-app{
+background: #DAE2F8;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    border:1px solid #F0F0F0;
+    border-radius: 5px;
+}
+#search-engine{
+    margin:0 auto;
+}
+input, button, #search-city{
+    background-color: #EFC3D5;
+    border: 1px solid #F0B8BE;
+    border-radius: 6px;
+    padding: 7px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+h1{ 
+    font-size: 30px;
+    margin-left: 30px;
+    margin-top: 25px;
+    line-height: 25px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+ul{
+    list-style: none;
+}
