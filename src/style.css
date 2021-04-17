@@ -56,8 +56,11 @@ img{padding: 0;
 }
 li{
     list-style: none;
-    text-transform: capitalize;
+    
     font-size: 15px;
     line-height: 20px;
     font-weight: 400;
+}
+li::first-letter{
+    text-transform: capitalize;
 }

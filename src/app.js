@@ -1,3 +1,27 @@
+let now = new Date();
+let months=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let month = months[now.getMonth()];
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day=days[now.getDay()];
+let date=now.getDate();
+let hour = now.getHours ();
+if ( hour<10) {
+  hours = `0${hour}`
+}
+let minutes=now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`
+}
+let currentDate=document.querySelector("#date");
+currentDate.innerHTML=`${day}, ${month} ${date} , ${hour}:${minutes}`
+
+function formatForecastDate (timestamp) {
+  let forecastDate = new Date (timestamp * 1000);
+  let day = forecastDate.getDay ();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[day];
+}
+
 function displayTemperature(response){
     console.log(response.data);
     let temperatureElement=document.querySelector("#current-temp");
