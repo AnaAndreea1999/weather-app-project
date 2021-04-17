@@ -46,7 +46,7 @@
               </div>
             </div>
           </form>
-          <h1 class="location" id="location">Basel, CH</h1>
+          <h1 id="city">Basel, CH</h1>
           <ul>
             <li
               class="date"
@@ -55,7 +55,7 @@
             >
               Sunday, 11 April | 02:36
             </li>
-            <li class="description" id="description">Clear</li>
+            <li id="description">Clear</li>
           </ul>
           <div class="row">
             <div class="col-md-6">
@@ -65,16 +65,15 @@
                   width="70px"
                   class="float-left"
                 />
-                <span class="current-temp">12 </span>
-                <small class="units">°C | °F</small>
+                <span id="current-temp">12 </span>
+                <small id="units">°C | °F</small>
               </div>
             </div>
             <div class="col-md-6">
               <ul>
-                <li class="precip">Precipitation: 0 cm</li>
-                <li class="humidity">Humidity: 63%</li>
-                <li class="wind">Wind: 5 km/h</li>
-                <li class="real-feel">Feels like: 11°</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind:<span id="wind"></span> km/h</li>
+                <li>Feels like: <span id="real-feel"></span>°</li>
               </ul>
               <hr />
               <div class="hour-forecast" id="h-forecast"></div>

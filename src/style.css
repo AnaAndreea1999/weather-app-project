@@ -40,17 +40,24 @@ ul{
 img{padding: 0;
     margin-left: 40px;
 }
-.current-temp{
+#current-temp{
     font-size: 40px;
     font-weight: 400;
     position: relative;
     top: 12px;
 }
-.units{
+#units{
     font-size: 18px;
     font-weight: 500;
 }
 .units:hover{
     transition: all 200ms ease-in-out;
     cursor: pointer;
+}
+li{
+    list-style: none;
+    text-transform: capitalize;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
 }
