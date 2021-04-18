@@ -74,3 +74,23 @@ li{
 li::first-letter{
     text-transform: capitalize;
 }
+
+.weather-forecast{
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
+}.weather-forecast, img{
+    position:relative;
+    right: 20px;
+}
+.weather-forecast-date{
+    opacity: 0,8;
+    font-size: 20px;
+}
+.weather-forecast-temp{
+font-size: 15px;
+}
+.weather-forecast-temp-min{
+    font-size: 15px;
+opacity: 0,8;
+}
