@@ -18,7 +18,7 @@ currentDate.innerHTML=`${day}, ${month} ${date} , ${hour}:${minutes}`
 function formatForecastDate (timestamp) {
   let forecastDate = new Date (timestamp * 1000);
   let day = forecastDate.getDay ();
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
 
