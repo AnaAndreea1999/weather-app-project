@@ -31,7 +31,7 @@ function displayTemperature(response){
     let feelsLikeElement=document.querySelector("#real-feel");
 
         let iconElement=document.querySelector("#icon");
-
+celsiusTemperature=response.data.main.temp;
     temperatureElement.innerHTML=Math.round(response.data.main.temp);
     cityElement.innerHTML=response.data.name;
     descriptionElement.innerHTML=response.data.weather[0].description;
@@ -53,5 +53,33 @@ function handelSubmit(event ){
    search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event){
+    event.preventDefault();
+    let fahrenheitTemperature=(celsiusTemperature * 9 / 5) + 32;
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let temperatureElement=document.querySelector("#current-temp")
+    
+    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+    
+}
+function displayCelsiusTemperature(event){
+        event.preventDefault();
+        celsiusLink.classList.add("active");
+        fahrenheitLink.classList.remove("active");
+        temperatureElement=document.querySelector("#current-temp");
+temperatureElement.innerHTML=Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature=null;
+
 let form=document.querySelector("#search-form");
 form.addEventListener("submit", handelSubmit);
+
+let fahrenheitLink=document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink=document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Basel");
