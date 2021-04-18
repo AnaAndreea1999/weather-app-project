@@ -22,6 +22,37 @@ function formatForecastDate (timestamp) {
   return days[day];
 }
 
+function displayForecast(response){
+      let forecastElem = document.querySelector("#forecast");
+      let days=["Mon", "Tue","Wed","Thu","Fri","Sat"] 
+      let forecastHTML=`<div class="row">`;
+     
+      days.forEach(function(day){
+            forecastHTML=forecastHTML +  `
+                <div class="col-2">
+                  <div class="weather-forecast-date">${day}</div>
+                  <img
+                    src="http://openweathermap.org/img/wn/50d@2x.png"
+                    alt=""
+                    width="40px"
+                  />
+                  <div class="weather-forecast-temp">
+                    <span class="weather-forecast-temp-max"> 18°</span>
+                    <span class="weather-forecast-temp-min"> 12°</span>
+                  </div>
+                </div>
+                `; 
+      });
+    
+
+              forecastHTML=forecastHTML + `</div>`;
+       forecastElem.innerHTML=forecastHTML;
+  
+
+}
+
+
+
 function displayTemperature(response){
     let temperatureElement=document.querySelector("#current-temp");
     let cityElement=document.querySelector("#city");
@@ -40,9 +71,10 @@ celsiusTemperature=response.data.main.temp;
     feelsLikeElement.innerHTML=Math.round( response.data.main.feels_like);
     iconElement.setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+
 }
  function search(city){
-     let apiKey="28b27ebaad82f0c7bf800ff3fcd47399";
+              let apiKey="28b27ebaad82f0c7bf800ff3fcd47399";
     let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemperature); 
 }
@@ -71,6 +103,7 @@ function displayCelsiusTemperature(event){
 temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
 
+
 let celsiusTemperature=null;
 
 let form=document.querySelector("#search-form");
@@ -83,3 +116,4 @@ let celsiusLink=document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Basel");
+displayForecast();
